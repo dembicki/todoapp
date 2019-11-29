@@ -13,14 +13,25 @@ export class TodoComponent implements OnInit {
   constructor(private toDoService: TodoService) { }
 
   ngOnInit() {
-    this.toDoService.getToDoList().snapshotChanges().subscribe (item => {
+    this.toDoService.getToDoList().snapshotChanges()
+    .subscribe (item => {
       this.toDoListArray = [];
       item.forEach(element => {
         var x = element.payload.toJSON();
         x["$key"] = element.key;
         this.toDoListArray.push(x);
       })
+
+      //sort array isChecked false -> true
+      this.toDoListArray.sort((a,b) => {
+        return a.isChecked - b.isChecked;
+      })
     })
+  }
+
+  onAdd(itemTitle) {
+    this.toDoService.addTitle(itemTitle.value);
+    itemTitle.value=null;
   }
 
 }
