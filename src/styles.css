@@ -3,3 +3,10 @@
 .hover-cursor{
     cursor:pointer;
 }
+#header{
+    background-color:#ebe;
+}
+.done{
+    text-decoration: line-through;
+    color:#eee!important;
+}
