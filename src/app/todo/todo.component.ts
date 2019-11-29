@@ -10,10 +10,10 @@ import { TodoService } from './shared/todo.service';
 export class TodoComponent implements OnInit {
 
   toDoListArray: any[];
-  constructor(private toDoService: TodoService) { }
+  constructor(private TodoService: TodoService) { }
 
   ngOnInit() {
-    this.toDoService.getToDoList().snapshotChanges()
+    this.TodoService.getToDoList().snapshotChanges()
     .subscribe (item => {
       this.toDoListArray = [];
       item.forEach(element => {
@@ -30,7 +30,7 @@ export class TodoComponent implements OnInit {
   }
 
   onAdd(itemTitle) {
-    this.toDoService.addTitle(itemTitle.value);
+    this.TodoService.addTitle(itemTitle.value);
     itemTitle.value=null;
   }
 
