@@ -11,7 +11,7 @@
 
 <div style="margin:5px 0px">
     <ul class="list-group" *ngFor="let item of toDoListArray">
-        <li class="list-group-item" [class.text-success]="item.isChecked">
+        <li class="list-group-item" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key,item.isChecked)">
             <span class="hover-cursor">
                 <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
             </span>
