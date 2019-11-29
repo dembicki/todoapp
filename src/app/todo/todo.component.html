@@ -5,6 +5,21 @@
 <div class="input-group">
     <input type="text" class="form-control" #itemTitle>
     <div class="input-group-addon hover-cursor" (click)="onAdd(itemTitle)">
-        <i class="fa fa-plus-circle fa-2x"></i>
+        <i class="fa fa-plus-square fa-2x"></i>
     </div>
+</div>
+
+<div style="margin:5px 0px">
+    <ul class="list-group" *ngFor="let item of toDoListArray">
+        <li class="list-group-item" [class.text-success]="item.isChecked">
+            <span class="hover-cursor">
+                <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
+            </span>
+            {{item.title}}
+            <span class="hover-cursor text-danger pull-right">
+                <i class="fa fa-trash-o fa-lg"></i>
+            </span>
+        </li>
+    </ul>
+
 </div>
