@@ -3,10 +3,18 @@
 .hover-cursor{
     cursor:pointer;
 }
-#header{
-    background-color:#ebe;
-}
 .done{
     text-decoration: line-through;
     color:#eee!important;
+}
+.container{
+    background: url(../src/assets/white-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;  
+    height: 100vh;
+    width:100%;
+}
+.jumbotron{
+    border:3px solid #e0e0e0;
+    
 }
